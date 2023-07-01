@@ -6,6 +6,8 @@ import { useForm } from 'react-hook-form';
 import { requests } from '../../../../app/endpoints';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { setAuthStatus, setToken } from '../../services/slice';
 
 export const SignInForm = ({ changeOpen }) => {
 
@@ -20,6 +22,7 @@ export const SignInForm = ({ changeOpen }) => {
 
     const [getToken, setGetToken] = useState(true);
     let navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleSignIn = async (data) => {
         changeOpen();
@@ -34,6 +37,8 @@ export const SignInForm = ({ changeOpen }) => {
         if (respons.status === 200) {
             const token = await respons.json();
             localStorage.setItem('token', JSON.stringify(token));
+            dispatch(setToken(token));
+            dispatch(setAuthStatus(true));
             setGetToken(true);
             changeOpen();
             reset();

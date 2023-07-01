@@ -2,39 +2,43 @@ import { useEffect, useState } from "react";
 import { AppRouter } from "./components/AppRouter";
 import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
+import { useDispatch, useSelector } from "react-redux";
+import { getToken, setAuthStatus, setToken } from "./pages/AuthPage/services/slice";
 
 const App = () => {
 
-  const dataToken = JSON.parse(localStorage.getItem('token'));
-  const [token, setToken] = useState(dataToken !== null ? dataToken : null)
-  console.log(token);
-  const [authStatus, setAuthStatus] = useState();
-  console.log(authStatus);
+  const token = useSelector(getToken);
+  const dispatch = useDispatch();
   const [expireTime, setExpireTime] = useState(null);
-  console.log(expireTime);
-
   const now = new Date().getTime();
 
   useEffect(() => {
-    setAuthStatus(token === null ? false : true);
+    const dataToken = JSON.parse(localStorage.getItem('token'));
+    if (dataToken !== null) {
+      dispatch(setToken(dataToken))
+      dispatch(setAuthStatus(true))
+    } else {
+      dispatch(setToken(null))
+      dispatch(setAuthStatus(false))
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(setAuthStatus(token === null ? false : true))
     setExpireTime(token !== null ? token.expire : null)
-  }, [token]);
+  }, [token, dispatch]);
 
   useEffect(() => {
     if (now < expireTime) {
       localStorage.removeItem('token');
-      setAuthStatus(false);
-      setToken(null)
+      dispatch(setAuthStatus(false));
+      dispatch(setToken(null));
     }
-  }, [now, expireTime])
+  }, [now, expireTime, dispatch])
 
   return (
     <div>
-      <Navbar
-        authStatus={authStatus}
-        setAuthStatus={setAuthStatus}
-        setToken={setToken}
-      />
+      <Navbar />
       <AppRouter />
       <Footer />
     </div>

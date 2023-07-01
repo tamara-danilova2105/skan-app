@@ -1,13 +1,17 @@
 import { AccountInfo } from "../AccountInfo";
 import user from '../../../../assets/user.png';
 import styles from './styles.module.css';
+import { useDispatch } from "react-redux";
+import { setAuthStatus, setToken } from "../../../../pages/AuthPage/services/slice";
 
-export const UserInfo = ({ setAuthStatus, setToken }) => {
+export const UserInfo = () => {
+
+    const dispatch = useDispatch();
 
     const sighUp = () => {
         localStorage.removeItem('token');
-        setAuthStatus(false);
-        setToken(null);
+        dispatch(setAuthStatus(false));
+        dispatch(setToken(null));
     }
 
     return (

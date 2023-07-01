@@ -3,8 +3,12 @@ import logo from '../../assets/logo_main.png'
 import { Link } from 'react-router-dom';
 import { SignIn } from './ui/SignIn';
 import { UserInfo } from './ui/UserInfo';
+import { useSelector } from 'react-redux';
+import { getAuthStatus } from '../../pages/AuthPage/services/slice';
 
-export const Navbar = ({ authStatus, setAuthStatus, setToken }) => {
+export const Navbar = () => {
+
+    const authStatus = useSelector(getAuthStatus);
 
     return (
         <nav className={styles.navbar}>
@@ -34,13 +38,7 @@ export const Navbar = ({ authStatus, setAuthStatus, setToken }) => {
             </div>
 
             <div>
-                {authStatus
-                    ? <UserInfo
-                        setAuthStatus={setAuthStatus}
-                        setToken={setToken}
-                    />
-                    : <SignIn />
-                }
+                { authStatus ? <UserInfo /> : <SignIn /> }
             </div>
         </nav>
     )
