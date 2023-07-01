@@ -1,0 +1,149 @@
+.form {
+    width: 429px;
+    height: 523px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px #00000026;
+    padding: 25px;
+}
+
+.recover_password {
+    color: #5970FF;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.02em;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.btn_signin_disabled {
+    border-radius: 5px;
+    border: none;
+    background: #5970FF;
+    opacity: 30%;
+    color: #FFFFFF;
+    font-family: Inter;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0.02em;
+    width: 379px;
+    height: 59px;
+    cursor: default;
+    margin-top: 7px;
+}
+
+.btn_signin {
+    border-radius: 5px;
+    border: none;
+    background: #5970FF;
+    color: #FFFFFF;
+    font-family: Inter;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0.02em;
+    width: 379px;
+    height: 59px;
+    cursor: pointer;
+    margin-top: 7px;
+}
+
+.container_btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.signin {
+    cursor: pointer;
+    color: #029491;
+    font-size: 16px;
+    font-family: Inter;
+    letter-spacing: 0.32px;
+    border-bottom: 2px solid;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8px;
+    width: 151px;
+}
+
+.signup {
+    cursor: pointer;
+    color: #C7C7C7;
+    font-size: 16px;
+    font-family: Inter;
+    letter-spacing: 0.32px;
+    border-bottom: 2px solid;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8px;
+    width: 213px;
+}
+
+.container_login {
+    margin-top: 40px;
+}
+
+.label {
+    color: #949494;
+    font-size: 16px;
+    font-family: Inter;
+    letter-spacing: 0.32px;
+}
+
+.input {
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+    color: #000;
+    font-size: 16px;
+    font-family: Inter;
+    letter-spacing: 0.16px;
+    padding: 12px 19px;
+    width: 100%;
+}
+
+.input_error  {
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid #FF5959;;
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+    color: #FF5959;
+    font-size: 16px;
+    font-family: Inter;
+    letter-spacing: 0.16px;
+    padding: 12px 19px;
+    width: 100%;
+}
+
+.text_error {
+    color: #FF5959;
+    font-size: 14px;
+    font-family: Inter;
+    letter-spacing: 0.14px;
+    text-align: center;
+    margin-top: 6px;
+    width: 100%;
+    height: 17px;
+}
+
+.container_sm {
+    color: #949494;
+    font-size: 16px;
+    font-family: Inter;
+    letter-spacing: 0.16px;
+    margin-top: 30px;
+}
+
+.image {
+    margin-right: 10px;
+    margin-top: 15px;
+}

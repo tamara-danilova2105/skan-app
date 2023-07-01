@@ -1,0 +1,41 @@
+.container_account {
+    display: flex;
+    justify-content: space-between;
+    width: 410px;
+}
+
+.user_info {
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    width: 32px;
+    height: 32px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 5px;
+}
+
+.text {
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.button {
+    border: none;
+    cursor: pointer;
+    opacity: 40%;
+    font-size: 10px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

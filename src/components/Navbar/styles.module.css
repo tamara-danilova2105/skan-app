@@ -1,0 +1,13 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 93px;
+    padding: 0px 60px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    margin: 0px 40px;
+}

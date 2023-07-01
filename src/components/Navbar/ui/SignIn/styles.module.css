@@ -1,0 +1,37 @@
+.signin {
+    display: flex;
+}
+
+.hr {
+    border: 1px solid #029491;
+    transform: rotate(180deg);
+}
+
+.sign_up {
+    border: none;
+    font-size: 14px;
+    background: inherit;
+    margin-right: 20px;
+    opacity: 40%;
+    cursor: pointer;
+}
+
+.sign_in {
+    background: #7CE3E1;
+    border: none;
+    border-radius: 5px;
+    width: 65px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-left: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
