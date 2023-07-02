@@ -23,7 +23,7 @@
 
 .text {
     font-size: 14px;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -31,10 +31,11 @@
 
 .button {
     border: none;
+    background: inherit;
     cursor: pointer;
     opacity: 40%;
-    font-size: 10px;
-    font-family: Inter;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: normal;

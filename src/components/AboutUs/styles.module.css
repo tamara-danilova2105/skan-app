@@ -1,0 +1,45 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding: 69px 60px;
+}
+
+.container_about {
+    width: 743px;
+}
+
+.header {
+    font-size: 60px;
+    font-family: Ferry;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 0.6px;
+}
+
+.text {
+    color: #000;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    margin-top: 20px;
+}
+
+.button {
+    border-radius: 5px;
+    background: #5970FF;
+    color: #FFF;
+    font-size: 22px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.22px;
+    border: none;
+    padding: 14px 64px;
+    margin-top: 70px;
+    cursor: pointer;
+}

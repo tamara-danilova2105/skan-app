@@ -14,6 +14,7 @@
     margin-right: 20px;
     opacity: 40%;
     cursor: pointer;
+    font-family: 'Inter', sans-serif;
 }
 
 .sign_in {
@@ -34,4 +35,5 @@
 .link {
     text-decoration: none;
     color: black;
+    font-family: 'Inter', sans-serif;
 }
