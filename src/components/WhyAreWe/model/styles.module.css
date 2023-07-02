@@ -10,3 +10,14 @@
     line-height: normal;
     letter-spacing: 0.45px;
 }
+
+@media all and (max-width: 500px) {
+    .main {
+        padding: 10px 14px;
+    }
+
+    .header {
+        font-size: 28px;
+        letter-spacing: 0.28px;
+    }
+}

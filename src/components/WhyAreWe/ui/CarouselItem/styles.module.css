@@ -16,3 +16,10 @@
     line-height: normal;
     letter-spacing: 0.18px;
 }
+
+@media all and (max-width: 500px) {
+    .main {
+        width: 298px;
+        height: 188px;
+    }
+}
