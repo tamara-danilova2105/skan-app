@@ -147,3 +147,34 @@
     margin-right: 10px;
     margin-top: 15px;
 }
+
+@media all and (max-width: 500px) {
+    .form {
+        width: 335px;
+        height: 504px;
+        padding: 15px;
+    }
+
+    .signin {
+        font-size: 14px;
+        letter-spacing: 0.28px;
+        width: 103px;
+    }
+
+    .signup {
+        cursor: pointer;
+        letter-spacing: 0.29px;
+        width: 182px;
+    }
+
+    .label {
+        font-size: 14px;
+        letter-spacing: 0.28px;
+    }
+
+    .btn_signin_disabled {
+        font-size: 20px;
+        letter-spacing: 0.4px;
+        width: 305px;
+    }
+}

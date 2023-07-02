@@ -20,8 +20,19 @@
 }
 
 @media all and (max-width: 500px) {
+    .auth_page {
+        padding: 31px 14px;
+    }
+
     .header {
         font-size: 22px;
         letter-spacing: 0.44px;
+        width: 380px;
+    }
+
+    .characters {
+        margin-left: 14px;
+        width: 335px;
+        height: auto;
     }
 }
