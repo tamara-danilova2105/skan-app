@@ -1,6 +1,5 @@
 .main {
-    padding: 10px 60px;
-    margin-bottom: 40px;
+    padding: 60px;
 }
 
 .header {
@@ -12,13 +11,15 @@
     letter-spacing: 0.45px;
 }
 
+.container_rates {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 70px;
+}
+
 @media all and (max-width: 500px) {
     .main {
-        padding: 10px 14px;
-    }
-
-    .header {
-        font-size: 28px;
-        letter-spacing: 0.28px;
+        padding: 14px;
     }
 }
