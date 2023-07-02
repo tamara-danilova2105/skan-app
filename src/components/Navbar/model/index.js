@@ -1,10 +1,10 @@
 import styles from './styles.module.css';
-import logo from '../../assets/logo_main.png'
+import logo from '../../../assets/logo_main.png'
 import { Link } from 'react-router-dom';
-import { SignIn } from './ui/SignIn';
-import { UserInfo } from './ui/UserInfo';
+import { SignIn } from '../ui/SignIn';
+import { UserInfo } from '../ui/UserInfo';
 import { useSelector } from 'react-redux';
-import { getAuthStatus } from '../../pages/AuthPage/services/slice';
+import { getAuthStatus } from '../../../pages/AuthPage/services/slice';
 
 export const Navbar = () => {
 

@@ -14,7 +14,7 @@ export const AboutUs = () => {
                     Cервис по поиску публикаций <br /> о компании <br /> по его ИНН
                 </h1>
                 <p className={styles.text}>
-                    Комплексный анализ публикаций, получение данных <br /> в формате PDF на электронную почту.
+                    Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.
                 </p>
                 {
                     authStatus &&
@@ -27,7 +27,7 @@ export const AboutUs = () => {
                     </Link>
                 }
             </div>
-            <img src={main} alt='main' />
+            <img className={styles.img} src={main} alt='main' />
         </section>
     );
 };

@@ -11,7 +11,9 @@ export const AuthPage = () => {
         <section className={styles.auth_page}>
             { showLoader() }
             <div>
-                <h2 className={styles.header}>Для оформления подписки на тариф, необходимо авторизоваться.</h2>
+                <h2 className={styles.header}>
+                    Для оформления подписки <br /> на тариф, необходимо авторизоваться.
+                </h2>
                 <img className={styles.characters} src={images} alt='Characters'/>
             </div>
             <SignInForm changeOpen={changeOpen} />

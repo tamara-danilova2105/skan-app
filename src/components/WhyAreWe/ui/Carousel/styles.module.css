@@ -1,0 +1,11 @@
+.button {
+    cursor: pointer;
+    border: none;
+    background: inherit;
+}
+
+.main {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 70px;
+}

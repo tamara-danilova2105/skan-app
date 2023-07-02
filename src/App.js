@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AppRouter } from "./components/AppRouter";
 import { Footer } from "./components/Footer";
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "./components/Navbar/model";
 import { useDispatch, useSelector } from "react-redux";
 import { getToken, setAuthStatus, setToken } from "./pages/AuthPage/services/slice";
 
