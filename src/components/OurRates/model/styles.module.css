@@ -30,5 +30,6 @@
 
     .container_rates {
         margin-top: 37px;
+        justify-content: center;
     }
 }
