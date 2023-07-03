@@ -7,6 +7,106 @@
     padding: 29px 44px;
 }
 
+.container_params {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container_filter {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 11px;
+}
+
+.label {
+    font-size: 18px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.54px;
+}
+
+.required {
+    height: 30px;
+    font-size: 25px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.75px;
+}
+
+.required_error {
+    color: #FF5959;
+    font-size: 25px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.75px;
+}
+
+.input {
+    width: 242px;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.42px;
+    padding: 13px 19px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.input_error {
+    width: 242px;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.42px;
+    padding: 13px 19px;
+    border-radius: 5px;
+    border: 1px solid #FF5959;
+    color: #FF5959;
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(255, 89, 89, 0.20);
+    margin-top: 20px;
+}
+
+.input_error::placeholder {
+    color: #FF5959;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.42px;
+    text-align: center;
+}
+
+.text_error {
+    margin-top: 2px;
+    height: 17px;
+    width: 242px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #FF5959;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.14px;
+}
+
 .container_items {
     margin-bottom: 15px;
 }

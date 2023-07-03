@@ -17,8 +17,6 @@ export const RateItem = ({ rate }) => {
         include,
     } = rate
 
-    console.log(style);
-
     const authStatus = useSelector(getAuthStatus);
 
     return (
