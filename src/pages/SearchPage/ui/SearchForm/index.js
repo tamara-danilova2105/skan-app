@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { data } from '../../lib/data';
 import styles from './styles.module.css';
+import { DateField } from '../DateField';
+// import { useState } from 'react';
 
 export const SearchForm = () => {
 
@@ -15,6 +17,8 @@ export const SearchForm = () => {
     } = useForm({
         mode: "onBlur"
     });
+
+    // const [isValidDate, setIsValidDate] = useState();
 
     return (
         <form className={styles.form}>
@@ -87,20 +91,7 @@ export const SearchForm = () => {
                 </div>
             </div>
             <div>
-                <div>
-                    <label className={styles.label}>
-                        Диапазон поиска
-                        <span
-                            className={errors?.inn ? styles.required_error : styles.required}
-                        >
-                            *
-                        </span>
-                    </label>
-                    <div>
-                        <input className={styles.date} type='date' />
-                        <input className={styles.date} type='date' />
-                    </div>
-                </div>
+                <DateField />
             </div>
         </form>
     );
