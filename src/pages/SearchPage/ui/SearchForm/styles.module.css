@@ -161,7 +161,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    flex-wrap: wrap;
 }
 
 .required_text {
@@ -186,6 +185,10 @@
         display: none;
     }
 
+    .container_button {
+        flex-wrap: wrap;
+    }
+
     .input,
     .input_error {
         width: 100%;
@@ -193,7 +196,7 @@
 
     .button,
     .button_disabled {
-        width: 345px;
+        width: 330px;
         margin-top: 40px;
     }
 }

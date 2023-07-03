@@ -42,7 +42,7 @@ export const DateField = ({ isValid, setIsValid }) => {
     }, [isValid, dispatch, startDate, endDate]);
 
     return (
-        <>
+        <div>
             <label className={styles.label}>
                 Диапазон поиска
                 <span
@@ -66,6 +66,6 @@ export const DateField = ({ isValid, setIsValid }) => {
             <p className={styles.text_error}>
                 {!isValid && 'Введите корректные данные'}
             </p>
-        </>
+        </div>
     )
 }
