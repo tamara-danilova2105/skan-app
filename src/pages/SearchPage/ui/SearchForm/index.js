@@ -6,8 +6,8 @@ export const SearchForm = () => {
 
     const {
         register,
-        formState: { 
-            errors, 
+        formState: {
+            errors,
             // isValid 
         },
         // handleSubmit,
@@ -79,7 +79,7 @@ export const SearchForm = () => {
                     {
                         data.map((item, index) => (
                             <div className={styles.container_items} key={index}>
-                                <input type='checkbox' />
+                                <input type='checkbox' className={styles.checkbox} />
                                 <label className={styles.item}>{item}</label>
                             </div>
                         ))
@@ -87,7 +87,20 @@ export const SearchForm = () => {
                 </div>
             </div>
             <div>
-
+                <div>
+                    <label className={styles.label}>
+                        Диапазон поиска
+                        <span
+                            className={errors?.inn ? styles.required_error : styles.required}
+                        >
+                            *
+                        </span>
+                    </label>
+                    <div>
+                        <input className={styles.date} type='date' />
+                        <input className={styles.date} type='date' />
+                    </div>
+                </div>
             </div>
         </form>
     );
