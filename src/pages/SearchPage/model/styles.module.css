@@ -1,0 +1,43 @@
+.main {
+    padding: 69px 60px;
+}
+
+.container_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    font-size: 40px;
+    font-family: Ferry;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    width: 700px;
+}
+
+.par {
+    font-size: 20px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    margin-top: 25px;
+}
+
+.document {
+    margin-top: 78px;
+    margin-right: 166px;
+}
+
+.folders {
+    margin-right: 45px;
+    margin-bottom: 20px;
+}
+
+.container_form {
+    display: flex;
+    margin-top: 47px;
+}

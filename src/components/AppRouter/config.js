@@ -3,7 +3,7 @@ import { FAQPage } from "../../pages/FAQPage";
 import { MainPage } from "../../pages/MainPage";
 import { RatesPage } from "../../pages/RatesPage";
 import { ResultPage } from "../../pages/ResultPage";
-import { SearchPage } from "../../pages/SearchPage";
+import { SearchPage } from "../../pages/SearchPage/model";
 
 export const routeConfig = {
     main: {

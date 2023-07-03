@@ -1,0 +1,22 @@
+.form {
+    width: 872px;
+    height: 543px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
+    padding: 29px 44px;
+}
+
+.container_items {
+    margin-bottom: 15px;
+}
+
+.item {
+    font-size: 18px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.54px;
+    margin-left: 20px;
+}
