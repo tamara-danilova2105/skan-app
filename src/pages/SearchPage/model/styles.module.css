@@ -41,3 +41,32 @@
     display: flex;
     margin-top: 47px;
 }
+
+@media all and (max-width: 500px) {
+
+    .main {
+        padding: 14px;
+    }
+    .header {
+        font-size: 28px;
+        letter-spacing: 0.28px;
+        width: 300px;
+    }
+
+    .par {
+        font-size: 18px;
+        margin-top: 19px;
+        width: 290px;
+    }
+
+    .folders {
+        display: none;
+    }
+
+    .document {
+        margin-top: 78px;
+        margin-left: -20px;
+        margin-right: 0px;
+    }
+    
+}

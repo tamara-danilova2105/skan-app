@@ -2,26 +2,36 @@ import { useForm } from 'react-hook-form';
 import { data } from '../../lib/data';
 import styles from './styles.module.css';
 import { DateField } from '../DateField';
-// import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getDataSearch, getDateInterval, setDate } from '../../services/slice';
+import { useState } from 'react';
 
 export const SearchForm = () => {
 
     const {
         register,
-        formState: {
-            errors,
-            // isValid 
-        },
-        // handleSubmit,
-        // reset
+        formState: { errors, isValid },
+        handleSubmit,
     } = useForm({
         mode: "onBlur"
     });
 
-    // const [isValidDate, setIsValidDate] = useState();
+    const [isValidDate, setIsValidDate] = useState(false);
+    const dispatch = useDispatch();
+    const issueDateInterval = useSelector(getDateInterval);
+    console.log(issueDateInterval);
+    const dataSearch = useSelector(getDataSearch);
+    console.log(dataSearch);
+
+    const hadleDataSearch = data => {
+        dispatch(setDate(data));
+    }
 
     return (
-        <form className={styles.form}>
+        <form
+            className={styles.form}
+            onSubmit={handleSubmit(hadleDataSearch)}
+        >
             <div className={styles.container_params}>
                 <div>
                     <div className={styles.container_filter}>
@@ -79,7 +89,7 @@ export const SearchForm = () => {
                         </p>
                     </div>
                 </div>
-                <div>
+                <div className={styles.items}>
                     {
                         data.map((item, index) => (
                             <div className={styles.container_items} key={index}>
@@ -90,8 +100,27 @@ export const SearchForm = () => {
                     }
                 </div>
             </div>
-            <div>
-                <DateField />
+            <div className={styles.container_button}>
+                <DateField
+                    isValid={isValidDate}
+                    setIsValid={setIsValidDate}
+                />
+                <div>
+                    <button
+                        type='submit'
+                        disabled={!isValid || !isValidDate}
+                        className={
+                            !isValid || !isValidDate
+                                ? styles.button_disabled
+                                : styles.button
+                        }
+                    >
+                        Поиск
+                    </button>
+                    <p className={styles.required_text}>
+                        * Обязательные к заполнению поля
+                    </p>
+                </div>
             </div>
         </form>
     );

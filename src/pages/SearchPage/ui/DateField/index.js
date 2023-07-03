@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
+import { useDispatch } from 'react-redux';
+import { setDateInterval } from '../../services/slice';
 
-export const DateField = () => {
+export const DateField = ({ isValid, setIsValid }) => {
 
+    const dispatch = useDispatch();
     const nowDate = new Date().getTime();
-    const [startDate, setStartDate] = useState(null);
-    const [endDate, setEndDate] = useState(null);
-    const [isValid, setIsValid] = useState(true);
-    console.log(isValid);
+    const [startDate, setStartDate] = useState();
+    const [endDate, setEndDate] = useState();
 
     const handleStartDate = e => {
         setStartDate(new Date(e.target.value).getTime());
@@ -18,34 +19,46 @@ export const DateField = () => {
     }
 
     useEffect(() => {
-        if (nowDate < startDate && nowDate < endDate) {
-            setIsValid(false)
-        }
-        if (endDate < startDate) {
-            setIsValid(false)
+        if(isNaN(startDate)) {
+            setIsValid(false);
+        } else if (isNaN(endDate)) {
+            setIsValid(false);
+        } else if (startDate > nowDate) {
+            setIsValid(false);
+        } else if (endDate > nowDate) {
+            setIsValid(false);
+        } else if (startDate > endDate) {
+            setIsValid(false);
         } else {
-            setIsValid(true)
+            setIsValid(true);
         }
-    }, [startDate, endDate, nowDate])
+    }, [startDate, endDate, nowDate, setIsValid]);
+
+    useEffect(() => {
+        isValid && dispatch(setDateInterval({
+            startDate: startDate,
+            endDate: endDate,
+        }))
+    }, [isValid, dispatch, startDate, endDate]);
 
     return (
-        <div>
+        <>
             <label className={styles.label}>
                 Диапазон поиска
                 <span
-                // className={error ? styles.required_error : styles.required}
+                className={!isValid ? styles.required_error : styles.required}
                 >
                     *
                 </span>
             </label>
             <div>
                 <input
-                    className={styles.date}
+                    className={!isValid ? styles.date_error : styles.date}
                     type='date'
                     onChange={handleStartDate}
                 />
                 <input
-                    className={styles.date}
+                    className={!isValid ? styles.date_error : styles.date}
                     type='date'
                     onChange={handleEndDate}
                 />
@@ -53,6 +66,6 @@ export const DateField = () => {
             <p className={styles.text_error}>
                 {!isValid && 'Введите корректные данные'}
             </p>
-        </div>
+        </>
     )
 }
