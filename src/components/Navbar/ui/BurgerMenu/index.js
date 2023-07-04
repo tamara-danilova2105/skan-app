@@ -47,7 +47,7 @@ export const BurgerMenu = ({ isOpen, setIsOpen }) => {
                             </Link>
                         </div>
                         {
-                            authStatus &&
+                            !authStatus &&
                             <div className={styles.container_signin}>
                                 <p className={styles.text}>
                                     Зарегистрироваться
