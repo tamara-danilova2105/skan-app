@@ -38,13 +38,13 @@ export const AccountInfo = () => {
                         <p className={styles.text}>
                             Использовано компаний
                             <span className={styles.used}>
-                                {accountInfo.usedCompanyCount}
+                                {accountInfo?.usedCompanyCount}
                             </span>
                         </p>
                         <p className={styles.text}>
                             Лимит по компаниям
                             <span className={styles.limit}>
-                                {accountInfo.companyLimit}
+                                {accountInfo?.companyLimit}
                             </span>
                         </p>
                     </>

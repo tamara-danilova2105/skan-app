@@ -10,7 +10,10 @@ const App = () => {
   const token = useSelector(getToken);
   const dispatch = useDispatch();
   const [expireTime, setExpireTime] = useState(null);
+  console.log(expireTime);
   const now = new Date().getTime();
+  console.log(now);
+  console.log(expireTime < now);
 
   useEffect(() => {
     const dataToken = JSON.parse(localStorage.getItem('token'));
@@ -25,11 +28,11 @@ const App = () => {
 
   useEffect(() => {
     dispatch(setAuthStatus(token === null ? false : true))
-    setExpireTime(token !== null ? token.expire : null)
+    setExpireTime(token !== null ? new Date(token.expire).getTime(): null)
   }, [token, dispatch]);
 
   useEffect(() => {
-    if (now < expireTime) {
+    if (now > expireTime && expireTime !== null) {
       localStorage.removeItem('token');
       dispatch(setAuthStatus(false));
       dispatch(setToken(null));
