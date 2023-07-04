@@ -5,6 +5,7 @@ export const searchSlice = createSlice({
     initialState: {
         dataSearch: {},
         issueDateInterval: {},
+        dataResult: {},
     },
     reducers: {
         setDate: (state, action) => {
@@ -13,10 +14,14 @@ export const searchSlice = createSlice({
         setDateInterval: (state, action) => {
             state.issueDateInterval = action.payload;
         },
+        saveResult: (state, action) => {
+            state.dataResult = action.payload;
+        }
     }
 });
 
 export const getDataSearch = state => state.search.dataSearch;
 export const getDateInterval = state => state.search.issueDateInterval;
-export const { setDate, setDateInterval } = searchSlice.actions;
+export const getDataResult = state => state.search.dataResult;
+export const { setDate, setDateInterval, saveResult } = searchSlice.actions;
 export default searchSlice.reducer;

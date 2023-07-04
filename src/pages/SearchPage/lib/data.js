@@ -7,3 +7,18 @@ export const data = [
     'Включать анонсы и календари',
     'Включать сводки новостей'
 ];
+
+export const tonality = [
+    {
+        text: 'Позитивная',
+        value: 'positive',
+    },
+    {
+        text: 'Негативная',
+        value: 'negative',
+    },
+    {
+        text: 'Любая',
+        value: 'any',
+    },
+]

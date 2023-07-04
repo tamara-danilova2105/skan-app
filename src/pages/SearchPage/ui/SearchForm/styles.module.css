@@ -47,6 +47,30 @@
     letter-spacing: 0.75px;
 }
 
+.select {
+    width: 242px;
+    padding: 13px 22px;
+    font-size: 14px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.42px;
+    margin-top: 20px;
+    appearance: none;
+    background: url(../../../../assets/arrow_custom.png) no-repeat right;
+    background-position-x: calc(100% - 8px);
+}
+
+.option {
+    font-size: 18px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.42px;
+}
+
 .input {
     width: 242px;
     font-size: 14px;

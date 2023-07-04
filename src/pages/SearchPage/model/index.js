@@ -3,10 +3,15 @@ import document from '../../../assets/Document.png';
 import folders from '../../../assets/Folders.png'
 import searchimg from '../../../assets/searchPage.png';
 import { SearchForm } from '../ui/SearchForm';
+import { useLoader } from '../../../hooks/useLoader';
 
 export const SearchPage = () => {
+    const [changeOpen, showLoader] = useLoader();
+
     return (
         <section className={styles.main}>
+            { showLoader() }
+
             <div className={styles.container_header}>
                 <div>
                     <h2 className={styles.header}>
@@ -22,7 +27,7 @@ export const SearchPage = () => {
                 </div>
             </div>
             <div className={styles.container_form}>
-                <SearchForm />
+                <SearchForm changeOpen={changeOpen} />
                 <img src={searchimg} alt='search' />
             </div>
         </section>

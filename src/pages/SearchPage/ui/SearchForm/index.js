@@ -1,12 +1,16 @@
 import { useForm } from 'react-hook-form';
-import { data } from '../../lib/data';
+import { data, tonality } from '../../lib/data';
 import styles from './styles.module.css';
 import { DateField } from '../DateField';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDataSearch, getDateInterval, setDate } from '../../services/slice';
+import { getDataSearch, getDateInterval, saveResult, setDate } from '../../services/slice';
 import { useState } from 'react';
+import { requests } from '../../../../app/endpoints';
+import { getToken } from '../../../AuthPage/services/slice';
+import { body } from '../../lib/body';
+import { useNavigate } from 'react-router';
 
-export const SearchForm = () => {
+export const SearchForm = ({ changeOpen }) => {
 
     const {
         register,
@@ -18,14 +22,54 @@ export const SearchForm = () => {
 
     const [isValidDate, setIsValidDate] = useState(false);
     const dispatch = useDispatch();
+    const token = useSelector(getToken);
     const issueDateInterval = useSelector(getDateInterval);
-    console.log(issueDateInterval);
     const dataSearch = useSelector(getDataSearch);
-    console.log(dataSearch);
+    let navigate = useNavigate();
 
-    const hadleDataSearch = data => {
+    const hadleDataSearch = async data => {
+
         dispatch(setDate(data));
-    }
+        changeOpen();
+
+        const respons = await fetch(requests.objectsearch.post.histograms, {
+            method: "POST",
+            headers: {
+                'accept': 'application/json',
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${token.accessToken}`,
+            },
+            body: JSON.stringify({
+                ...body,
+                issueDateInterval: {
+                    startDate: issueDateInterval.startDate,
+                    endDate: issueDateInterval.endDate,
+                },
+                searchContext: {
+                    ...body.searchContext,
+                    targetSearchEntitiesContext: {
+                        ...body.targetSearchEntitiesContext,
+                        targetSearchEntities: [
+                            {
+                                type: "company",
+                                sparkId: null,
+                                entityId: null,
+                                inn: dataSearch.inn,
+                                maxFullness: true,
+                                inBusinessNews: null
+                            }
+                        ],
+                        tonality: dataSearch.tonality,
+                    }
+                },
+                limit: dataSearch.limit,
+            })
+        })
+        const searchResult = await respons.json();
+        changeOpen();
+        navigate('/result');
+        dispatch(saveResult(searchResult));
+    };
 
     return (
         <form
@@ -60,8 +104,23 @@ export const SearchForm = () => {
                         <label className={styles.label}>
                             Тональность
                         </label>
-                        {/* ИСПРАВИТЬ НА OPTION */}
-                        <input className={styles.input} />
+                        <select
+                            {...register('tonality')}
+                            className={styles.select}
+                            defaultValue={'any'}
+                        >
+                            {
+                                tonality.map(item =>
+                                    <option
+                                        className={styles.option}
+                                        key={item.text}
+                                        value={item.value}
+                                    >
+                                        {item.text}
+                                    </option>
+                                )
+                            }
+                        </select>
                         <p className={styles.text_error}></p>
                     </div>
 
