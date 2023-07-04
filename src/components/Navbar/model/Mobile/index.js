@@ -13,7 +13,7 @@ export const NavbarMobile = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className={!isOpen ? styles.navbar : styles.navbar_active}>
+        <nav className={isOpen ? styles.navbar : styles.navbar_active}>
             <div className={isOpen ? styles.logo : styles.logo_white}>
                 <img className={styles.img} src={isOpen ? logo : logoWhite} alt='logo' />
                 {(authStatus && isOpen) && <AccountInfo />}

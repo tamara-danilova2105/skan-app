@@ -3,9 +3,13 @@
     background-color: inherit;
 }
 
-.navbar {
+.navbar_active {
     display: flex;
     background-color: #029491;
+}
+
+.img {
+    margin-right: 20px;
 }
 
 .logo {
