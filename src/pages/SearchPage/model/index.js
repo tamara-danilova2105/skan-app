@@ -28,7 +28,7 @@ export const SearchPage = () => {
             </div>
             <div className={styles.container_form}>
                 <SearchForm changeOpen={changeOpen} />
-                <img src={searchimg} alt='search' />
+                <img className={styles.img} src={searchimg} alt='search' />
             </div>
         </section>
     );

@@ -54,18 +54,24 @@
     .header  {
         font-size: 28px;
         letter-spacing: 0.28px;
-        width: 361px;
+        width: 100%;
     }
 
     .text {
         font-size: 18px;
         letter-spacing: 0.18px;
         margin-top: 19px;
-        width: 327px;
+        width: 100%;
     }
 
     .img {
-        width: 347px;
-        height: 327px;
+        width: 100%;
+        height: auto;
+        margin-top: 39px;
+    }
+
+    .button {
+        padding: 14px 72px;
+        margin-top: 32px;
     }
 }

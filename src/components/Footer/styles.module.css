@@ -2,10 +2,12 @@
     background: #029491;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .img {
     margin-left: 60px;
+    height: 102px;
 }
 
 .contact {
