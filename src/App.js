@@ -44,7 +44,7 @@ const App = () => {
   return (
     <div>
       {
-        width < breakpoint
+        width > breakpoint
           ? <NavbarDesktop />
           : <NavbarMobile />
       }
