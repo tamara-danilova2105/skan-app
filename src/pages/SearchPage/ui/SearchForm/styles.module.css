@@ -190,7 +190,8 @@
     }
 
     .input,
-    .input_error {
+    .input_error,
+    .text_error {
         width: 100%;
     }
 

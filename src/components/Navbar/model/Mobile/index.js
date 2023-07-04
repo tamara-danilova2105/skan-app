@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 import logo from '../../../../assets/logo_main.png'
 import { useSelector } from 'react-redux';
 import { getAuthStatus } from '../../../../pages/AuthPage/services/slice';
-import { UserInfo } from '../../ui/UserInfo';
+import { AccountInfo } from '../../ui/AccountInfo';
 
 export const NavbarMobile = () => {
 
@@ -11,7 +11,7 @@ export const NavbarMobile = () => {
     return (
         <nav className={styles.navbar}>
             <img className={styles.img} src={logo} alt='logo' />
-            { authStatus && <UserInfo />}
+            { authStatus && <AccountInfo />}
             ЗДЕСЬ будет меню для мобильных
         </nav>
     );
