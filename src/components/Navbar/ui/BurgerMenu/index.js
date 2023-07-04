@@ -1,7 +1,12 @@
+import { useSelector } from 'react-redux';
 import styles from './styles.module.css';
 import { Link } from "react-router-dom";
+import { getAuthStatus } from '../../../../pages/AuthPage/services/slice';
 
 export const BurgerMenu = ({ isOpen, setIsOpen }) => {
+
+    const authStatus = useSelector(getAuthStatus);
+
     return (
         <div>
             <div
@@ -41,17 +46,20 @@ export const BurgerMenu = ({ isOpen, setIsOpen }) => {
                                 FAQ
                             </Link>
                         </div>
-                        <div className={styles.container_signin}>
-                            <p className={styles.text}>
-                                Зарегистрироваться
-                            </p>
-                            <button
-                                className={styles.button}
-                                onClick={() => setIsOpen(true)}
-                            >
-                                <Link className={styles.link_btn} to={'/auth'}>Войти</Link>
-                            </button>
-                        </div>
+                        {
+                            authStatus &&
+                            <div className={styles.container_signin}>
+                                <p className={styles.text}>
+                                    Зарегистрироваться
+                                </p>
+                                <button
+                                    className={styles.button}
+                                    onClick={() => setIsOpen(true)}
+                                >
+                                    <Link className={styles.link_btn} to={'/auth'}>Войти</Link>
+                                </button>
+                            </div>
+                        }
                     </div>
                 }
             </div>
