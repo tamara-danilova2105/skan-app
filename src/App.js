@@ -10,8 +10,10 @@ const App = () => {
 
   const token = useSelector(getToken);
   const dispatch = useDispatch();
-  const [expireTime, setExpireTime] = useState(null);
+
   const now = new Date().getTime();
+  const [expireTime, setExpireTime] = useState(null);
+
   const width = window.innerWidth;
   const breakpoint = 620;
 
@@ -42,7 +44,7 @@ const App = () => {
   return (
     <div>
       {
-        width > breakpoint
+        width < breakpoint
           ? <NavbarDesktop />
           : <NavbarMobile />
       }

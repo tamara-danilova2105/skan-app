@@ -1,3 +1,19 @@
 .navbar {
     display: flex;
+    background-color: inherit;
+}
+
+.navbar {
+    display: flex;
+    background-color: #029491;
+}
+
+.logo {
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.logo_white {
+    background-color: #029491;
 }
