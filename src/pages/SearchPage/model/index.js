@@ -1,6 +1,7 @@
 import styles from './styles.module.css';
 import document from '../../../assets/Document.png';
 import folders from '../../../assets/Folders.png'
+import searchimg from '../../../assets/searchPage.png';
 import { SearchForm } from '../ui/SearchForm';
 
 export const SearchPage = () => {
@@ -22,6 +23,7 @@ export const SearchPage = () => {
             </div>
             <div className={styles.container_form}>
                 <SearchForm />
+                <img src={searchimg} alt='search' />
             </div>
         </section>
     );

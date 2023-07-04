@@ -39,6 +39,8 @@
 
 .container_form {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 47px;
 }
 
@@ -68,5 +70,4 @@
         margin-left: -20px;
         margin-right: 0px;
     }
-    
 }

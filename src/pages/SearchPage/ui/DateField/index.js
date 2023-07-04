@@ -9,6 +9,7 @@ export const DateField = ({ isValid, setIsValid }) => {
     const nowDate = new Date().getTime();
     const [startDate, setStartDate] = useState();
     const [endDate, setEndDate] = useState();
+    const [textError, setTextError] = useState(true);
 
     const handleStartDate = e => {
         setStartDate(new Date(e.target.value).getTime());
@@ -18,26 +19,35 @@ export const DateField = ({ isValid, setIsValid }) => {
         setEndDate(new Date(e.target.value).getTime())
     }
 
+    const parseDate = date => {
+        return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+    }
+
     useEffect(() => {
-        if(isNaN(startDate)) {
+        if (isNaN(startDate)) {
             setIsValid(false);
         } else if (isNaN(endDate)) {
             setIsValid(false);
         } else if (startDate > nowDate) {
+            setTextError(false);
             setIsValid(false);
         } else if (endDate > nowDate) {
+            setTextError(false);
             setIsValid(false);
         } else if (startDate > endDate) {
+            setTextError(false);
             setIsValid(false);
         } else {
+            setTextError(true);
             setIsValid(true);
+            console.log();
         }
     }, [startDate, endDate, nowDate, setIsValid]);
 
     useEffect(() => {
         isValid && dispatch(setDateInterval({
-            startDate: startDate,
-            endDate: endDate,
+            startDate: `${parseDate(new Date(startDate))}T00:00:00+03:00`,
+            endDate: `${parseDate(new Date(endDate))}T23:59:59+03:00`,
         }))
     }, [isValid, dispatch, startDate, endDate]);
 
@@ -46,25 +56,25 @@ export const DateField = ({ isValid, setIsValid }) => {
             <label className={styles.label}>
                 Диапазон поиска
                 <span
-                className={!isValid ? styles.required_error : styles.required}
+                    className={!textError ? styles.required_error : styles.required}
                 >
                     *
                 </span>
             </label>
             <div>
                 <input
-                    className={!isValid ? styles.date_error : styles.date}
+                    className={!textError ? styles.date_error : styles.date}
                     type='date'
                     onChange={handleStartDate}
                 />
                 <input
-                    className={!isValid ? styles.date_error : styles.date}
+                    className={!textError ? styles.date_error : styles.date}
                     type='date'
                     onChange={handleEndDate}
                 />
             </div>
             <p className={styles.text_error}>
-                {!isValid && 'Введите корректные данные'}
+                {!textError && 'Введите корректные данные'}
             </p>
         </div>
     )
