@@ -10,7 +10,7 @@ import { useState } from 'react';
 export const NavbarMobile = () => {
 
     const authStatus = useSelector(getAuthStatus);
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
 
     return (
         <nav className={isOpen ? styles.navbar : styles.navbar_active}>
