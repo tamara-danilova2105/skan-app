@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const BurgerMenu = ({ isOpen, setIsOpen }) => {
     return (
@@ -12,33 +12,49 @@ export const BurgerMenu = ({ isOpen, setIsOpen }) => {
                 <span className={isOpen ? styles.line2 : styles.line2_active}></span>
                 <span className={isOpen ? styles.line3 : styles.line3_active}></span>
             </div>
-            {/* <div class={isOpen ? styles.menu_items : styles.menu_items_active}>
-                <div className={styles.container_link}>
-                    <Link
-                        className={styles.link}
-                        to={'/'}
-                    >
-                        Главная
-                    </Link>
+            <div>
+                {
+                    !isOpen &&
+                    <div className={styles.menu_items_active}>
+                        <div className={styles.container_link}>
+                            <Link
+                                className={styles.link}
+                                to={'/'}
+                                onClick={() => setIsOpen(true)}
+                            >
+                                Главная
+                            </Link>
 
-                    <Link
-                        className={styles.link}
-                        to={'/rates'}
-                    >
-                        Тарифы
-                    </Link>
+                            <Link
+                                className={styles.link}
+                                to={'/rates'}
+                                onClick={() => setIsOpen(true)}
+                            >
+                                Тарифы
+                            </Link>
 
-                    <Link
-                        className={styles.link}
-                        to={'/faq'}
-                    >
-                        FAQ
-                    </Link>
-                </div>
-                <div className={styles.container_signin}>
-
-                </div>
-            </div> */}
+                            <Link
+                                className={styles.link}
+                                to={'/faq'}
+                                onClick={() => setIsOpen(true)}
+                            >
+                                FAQ
+                            </Link>
+                        </div>
+                        <div className={styles.container_signin}>
+                            <p className={styles.text}>
+                                Зарегистрироваться
+                            </p>
+                            <button
+                                className={styles.button}
+                                onClick={() => setIsOpen(true)}
+                            >
+                                <Link className={styles.link_btn} to={'/auth'}>Войти</Link>
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
 
     )
