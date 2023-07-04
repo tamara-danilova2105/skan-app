@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import { AppRouter } from "./components/AppRouter";
 import { Footer } from "./components/Footer";
-import { Navbar } from "./components/Navbar/model";
 import { useDispatch, useSelector } from "react-redux";
 import { getToken, setAuthStatus, setToken } from "./pages/AuthPage/services/slice";
+import { NavbarDesktop } from "./components/Navbar/model/Desktop";
+import { NavbarMobile } from "./components/Navbar/model/Mobile";
 
 const App = () => {
 
   const token = useSelector(getToken);
   const dispatch = useDispatch();
   const [expireTime, setExpireTime] = useState(null);
-  console.log(expireTime);
   const now = new Date().getTime();
-  console.log(now);
-  console.log(expireTime < now);
+  const width = window.innerWidth;
+  const breakpoint = 620;
 
   useEffect(() => {
     const dataToken = JSON.parse(localStorage.getItem('token'));
@@ -28,7 +28,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(setAuthStatus(token === null ? false : true))
-    setExpireTime(token !== null ? new Date(token.expire).getTime(): null)
+    setExpireTime(token !== null ? new Date(token.expire).getTime() : null)
   }, [token, dispatch]);
 
   useEffect(() => {
@@ -41,7 +41,11 @@ const App = () => {
 
   return (
     <div>
-      <Navbar />
+      {
+        width > breakpoint
+          ? <NavbarDesktop />
+          : <NavbarMobile />
+      }
       <AppRouter />
       <Footer />
     </div>
