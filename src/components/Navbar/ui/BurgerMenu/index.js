@@ -61,19 +61,22 @@ export const BurgerMenu = ({ isOpen, setIsOpen }) => {
                                     <p className={styles.text}>
                                         Зарегистрироваться
                                     </p>
-                                    <button
-                                        className={styles.button}
-                                        onClick={() => setIsOpen(true)}
-                                    >
-                                        <Link className={styles.link_btn} to={'/auth'}>Войти</Link>
-                                    </button>
+                                    <Link className={styles.link_btn} to={'/auth'}>
+                                        <button
+                                            className={styles.button}
+                                            onClick={() => setIsOpen(true)}
+                                        >
+                                            Войти
+                                        </button>
+                                    </Link>
+
                                 </div>
                                 : <div className={styles.container_signin}>
                                     <button
                                         className={styles.button}
                                         onClick={sighUp}
                                     >
-                                        <Link className={styles.link_btn} to={'/auth'}>Выйти</Link>
+                                        Выйти
                                     </button>
                                 </div>
                         }
