@@ -5,7 +5,8 @@ export const searchSlice = createSlice({
     initialState: {
         dataSearch: {},
         issueDateInterval: {},
-        dataResult: {},
+        dataGistoframs: {},
+        dataPublics: {},
     },
     reducers: {
         setDate: (state, action) => {
@@ -14,14 +15,18 @@ export const searchSlice = createSlice({
         setDateInterval: (state, action) => {
             state.issueDateInterval = action.payload;
         },
-        saveResult: (state, action) => {
-            state.dataResult = action.payload;
+        saveDataGistograms: (state, action) => {
+            state.dataGistoframs = action.payload;
+        },
+        saveDataPublics: (state, action) => {
+            state.dataPublics = action.payload;
         }
     }
 });
 
 export const getDataSearch = state => state.search.dataSearch;
 export const getDateInterval = state => state.search.issueDateInterval;
-export const getDataResult = state => state.search.dataResult;
-export const { setDate, setDateInterval, saveResult } = searchSlice.actions;
+export const getDataGistorams = state => state.search.dataGistoframs;
+export const getDataPublics = state => state.search.dataPublics;
+export const { setDate, setDateInterval, saveDataGistograms, saveDataPublics } = searchSlice.actions;
 export default searchSlice.reducer;

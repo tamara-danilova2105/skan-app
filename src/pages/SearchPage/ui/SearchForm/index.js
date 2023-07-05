@@ -3,7 +3,7 @@ import { data, tonality } from '../../lib/data';
 import styles from './styles.module.css';
 import { DateField } from '../DateField';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDataSearch, getDateInterval, saveResult, setDate } from '../../services/slice';
+import { getDateInterval, saveDataGistograms, saveDataPublics, setDate } from '../../services/slice';
 import { useState } from 'react';
 import { requests } from '../../../../app/endpoints';
 import { getToken } from '../../../AuthPage/services/slice';
@@ -24,13 +24,34 @@ export const SearchForm = ({ changeOpen }) => {
     const dispatch = useDispatch();
     const token = useSelector(getToken);
     const issueDateInterval = useSelector(getDateInterval);
-    const dataSearch = useSelector(getDataSearch);
     let navigate = useNavigate();
 
     const hadleDataSearch = async data => {
 
         dispatch(setDate(data));
         changeOpen();
+
+        const searchBody = {
+            ...body,
+            issueDateInterval: {
+                startDate: issueDateInterval.startDate,
+                endDate: issueDateInterval.endDate,
+            },
+            searchContext: {
+                ...body.searchContext,
+                targetSearchEntitiesContext: {
+                    ...body.targetSearchEntitiesContext,
+                    targetSearchEntities: [
+                        {
+                            type: "company",
+                            inn: data.inn,
+                        }
+                    ],
+                    tonality: data.tonality,
+                }
+            },
+            limit: data.limit,
+        }
 
         const respons = await fetch(requests.objectsearch.post.histograms, {
             method: "POST",
@@ -39,36 +60,25 @@ export const SearchForm = ({ changeOpen }) => {
                 'content-type': 'application/json',
                 'Authorization': `Bearer ${token.accessToken}`,
             },
-            body: JSON.stringify({
-                ...body,
-                issueDateInterval: {
-                    startDate: issueDateInterval.startDate,
-                    endDate: issueDateInterval.endDate,
-                },
-                searchContext: {
-                    ...body.searchContext,
-                    targetSearchEntitiesContext: {
-                        ...body.targetSearchEntitiesContext,
-                        targetSearchEntities: [
-                            {
-                                type: "company",
-                                sparkId: null,
-                                entityId: null,
-                                inn: dataSearch.inn,
-                                maxFullness: true,
-                                inBusinessNews: null
-                            }
-                        ],
-                        tonality: dataSearch.tonality,
-                    }
-                },
-                limit: dataSearch.limit,
-            })
-        })
-        const searchResult = await respons.json();
+            body: JSON.stringify(searchBody)
+        });
+
+        const respons_new = await fetch(requests.objectsearch.post.objectsearch, {
+            method: "POST",
+            headers: {
+                'accept': 'application/json',
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${token.accessToken}`,
+            },
+            body: JSON.stringify(searchBody)
+        });
+
+        const resultHistorgrams = await respons.json();
+        const resultPublics = await respons_new.json();
         changeOpen();
         navigate('/result');
-        dispatch(saveResult(searchResult.data));
+        dispatch(saveDataGistograms(resultHistorgrams.data));
+        dispatch(saveDataPublics(resultPublics.items));
     };
 
     return (

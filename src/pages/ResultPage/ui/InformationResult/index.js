@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
 import styles from './styles.module.css';
-import { getDataResult } from '../../../SearchPage/services/slice';
+import { getDataGistorams } from '../../../SearchPage/services/slice';
 
 export const InformationResult = () => {
 
-    const dataResult = useSelector(getDataResult);
+    const dataGistograms = useSelector(getDataGistorams);
+    console.log(dataGistograms);
 
     const parseDate = date => {
         const day = date.getDate();
@@ -26,7 +27,7 @@ export const InformationResult = () => {
                 Общая сводка
             </h2>
             <p className={styles.par}>
-                Найдено {dataResult[0]?.data.length} {cases(dataResult[0]?.data.length, ['вариант', 'варианта', 'вариантов'])}
+                Найдено {dataGistograms[0]?.data.length} {cases(dataGistograms[0]?.data.length, ['вариант', 'варианта', 'вариантов'])}
             </p>
             <div className={styles.container_result}>
                 <div className={styles.field_description}>
@@ -35,7 +36,7 @@ export const InformationResult = () => {
                     <p className={styles.field}>Риски</p>
                 </div>
                 {
-                    dataResult[0]?.data.map((item, index) => (
+                    dataGistograms[0]?.data.map((item, index) => (
                         <div className={styles.container_items} key={index}>
                             <div>
                                 <p className={styles.item}>
@@ -45,7 +46,7 @@ export const InformationResult = () => {
                                     {item.value}
                                 </p>
                                 <p className={styles.item}>
-                                    {dataResult[1].data[index].value}
+                                    {dataGistograms[1].data[index].value}
                                 </p>
                             </div>
                             <hr className={styles.hr} />

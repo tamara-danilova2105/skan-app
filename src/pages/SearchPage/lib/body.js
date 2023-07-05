@@ -8,8 +8,6 @@ export const body = {
             "targetSearchEntities": [
                 {
                     "type": "company",
-                    "sparkId": null,
-                    "entityId": null,
                     "inn": 7710137066, //add
                     "maxFullness": true,
                     "inBusinessNews": null
