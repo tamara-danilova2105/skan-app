@@ -60,14 +60,14 @@ export const Carousel = () => {
                 onClick={previos}
                 className={styles.button}
             >
-                <BackIcon />
+                {BackIcon()}
             </button>
             {getCarousel()}
             <button
                 onClick={next}
                 className={styles.button}
             >
-                <NextIcon />
+                {NextIcon()}
             </button>
         </div>
     )

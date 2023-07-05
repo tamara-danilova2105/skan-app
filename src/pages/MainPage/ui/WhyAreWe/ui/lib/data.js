@@ -20,29 +20,29 @@ export const data = [
     [
         {
             icon: timeIcon,
-            text: 'Текст слайда 2',
+            text: 'Текст слайда 4',
         },
         {
             icon: searchIcon,
-            text: 'Текст слайда 2',
+            text: 'Текст слайда 5',
         },
         {
             icon: protectionIcon,
-            text: 'Текст слайда 2',
+            text: 'Текст слайда 6',
         },
     ],
     [
         {
             icon: timeIcon,
-            text: 'Текст слайда 3',
+            text: 'Текст слайда 7',
         },
         {
             icon: searchIcon,
-            text: 'Текст слайда 3',
+            text: 'Текст слайда 8',
         },
         {
             icon: protectionIcon,
-            text: 'Текст слайда 3',
+            text: 'Текст слайда 9',
         },
     ],
 ];

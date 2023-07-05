@@ -5,6 +5,7 @@ import { getAuthStatus } from "../../AuthPage/services/slice";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import { InformationResult } from "../ui/InformationResult";
+import { DocumetList } from "../ui/DocumetList";
 
 export const ResultPage = () => {
 
@@ -29,6 +30,7 @@ export const ResultPage = () => {
                 <img className={styles.img} src={resultIcon} alt="result icon" />
             </div>
             <InformationResult />
+            <DocumetList />
         </section>
     );
 };

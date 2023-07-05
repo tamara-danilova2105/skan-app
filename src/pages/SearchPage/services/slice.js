@@ -6,7 +6,7 @@ export const searchSlice = createSlice({
         dataSearch: {},
         issueDateInterval: {},
         dataGistoframs: {},
-        dataPublics: {},
+        dataPublics: [],
     },
     reducers: {
         setDate: (state, action) => {
