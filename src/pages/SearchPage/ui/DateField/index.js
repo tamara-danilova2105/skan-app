@@ -11,7 +11,7 @@ export const DateField = ({ isValid, setIsValid }) => {
     const [endDate, setEndDate] = useState();
     const [textError, setTextError] = useState(true);
 
-    // let isSafari = window.safari !== undefined; //IOS not support
+    let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
     const handleStartDate = e => {
         setStartDate(new Date(e.target.value).getTime());
@@ -21,12 +21,8 @@ export const DateField = ({ isValid, setIsValid }) => {
         setEndDate(new Date(e.target.value).getTime())
     }
 
-    // const onDateFocus = e => (e.target.type = "date") //IOS not support
-
-    // const onDateBlur = e => {
-    //     if (!isSafari) e.target.type = "text"
-    //     else e.target.type = "date"
-    // } //IOS not support
+    const onDateFocus = e => (e.target.type = "date"); //IOS not support
+    const onDateBlur = e => (e.target.type = "text"); //IOS not support
 
     const parseDate = date => {
         return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
@@ -73,21 +69,19 @@ export const DateField = ({ isValid, setIsValid }) => {
             <div>
                 <input
                     className={!textError ? styles.date_error : styles.date}
-                    type='date'
-                    // type={!isSafari ? 'text' : 'date'}
+                    type={isSafari ? 'text' : 'date'}
                     placeholder="Дата начала"
                     onChange={handleStartDate}
-                    // onFocus={onDateFocus}
-                    // onBlur={onDateBlur}
+                    onFocus={isSafari ? onDateFocus : null}
+                    onBlur={isSafari ? onDateBlur : null}
                 />
                 <input
                     className={!textError ? styles.date_error : styles.date}
-                    type='date'
-                    // type={!isSafari ? 'text' : 'date'}
+                    type={isSafari ? 'text' : 'date'}
                     placeholder="Дата конца"
                     onChange={handleEndDate}
-                    // onFocus={onDateFocus}
-                    // onBlur={onDateBlur}
+                    onFocus={isSafari ? onDateFocus : null}
+                    onBlur={isSafari ? onDateBlur : null}
                 />
             </div>
             <p className={styles.text_error}>
