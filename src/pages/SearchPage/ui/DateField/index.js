@@ -19,6 +19,9 @@ export const DateField = ({ isValid, setIsValid }) => {
         setEndDate(new Date(e.target.value).getTime())
     }
 
+    const onDateFocus = e => (e.target.type = "date");
+    const onDateBlur = e => (e.target.type = "text");
+
     const parseDate = date => {
         return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
     }
@@ -64,13 +67,19 @@ export const DateField = ({ isValid, setIsValid }) => {
             <div>
                 <input
                     className={!textError ? styles.date_error : styles.date}
-                    type='date'
+                    type='text'
+                    placeholder="Дата начала"
                     onChange={handleStartDate}
+                    onFocus={onDateFocus}
+                    onBlur={onDateBlur}
                 />
                 <input
                     className={!textError ? styles.date_error : styles.date}
-                    type='date'
+                    type='text'
+                    placeholder="Дата конца"
                     onChange={handleEndDate}
+                    onFocus={onDateFocus}
+                    onBlur={onDateBlur}
                 />
             </div>
             <p className={styles.text_error}>
