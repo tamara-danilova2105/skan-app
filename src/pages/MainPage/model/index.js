@@ -1,9 +1,9 @@
-import { AboutUs } from '../../../components/AboutUs';
-import { WhyAreWe } from '../ui/WhyAreWe/model';
 import styles from './styles.module.css';
 import desktop from '../../../assets/Group14Desk.png';
 import mobile from '../../../assets/Group14Mob.png';
 import { OurRates } from '../ui/OurRates/model';
+import { AboutUs } from '../ui/AboutUs';
+import { WhyAreWe } from '../ui/WhyAreWe/model';
 
 export const MainPage = () => {
     const width = window.innerWidth;

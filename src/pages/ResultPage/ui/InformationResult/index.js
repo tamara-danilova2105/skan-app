@@ -26,7 +26,7 @@ export const InformationResult = () => {
                 Общая сводка
             </h2>
             <p className={styles.par}>
-                Найдено {dataResult[0]?.data.length} {cases (dataResult[0]?.data.length, ['вариант', 'варианта', 'вариантов'])}
+                Найдено {dataResult[0]?.data.length} {cases(dataResult[0]?.data.length, ['вариант', 'варианта', 'вариантов'])}
             </p>
             <div className={styles.container_result}>
                 <div className={styles.field_description}>

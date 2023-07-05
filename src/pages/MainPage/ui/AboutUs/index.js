@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
-import styles from './styles.module.css';
-import { getAuthStatus } from '../../pages/AuthPage/services/slice';
+import { getAuthStatus } from '../../../AuthPage/services/slice';
 import { Link } from 'react-router-dom';
-import main from '../../assets/main.png'
+import main from '../../../../assets/main.png';
+import styles from './styles.module.css';
 
 export const AboutUs = () => {
     const authStatus = useSelector(getAuthStatus);
