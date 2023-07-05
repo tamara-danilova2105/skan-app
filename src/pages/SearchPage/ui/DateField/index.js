@@ -11,7 +11,9 @@ export const DateField = ({ isValid, setIsValid }) => {
     const [endDate, setEndDate] = useState();
     const [textError, setTextError] = useState(true);
 
-    let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    let isSafari = window.safari !== undefined;
+    const onDateFocus = e => (e.target.type = "date");
+    const onDateBlur = e => (e.target.type = "text"); 
 
     const handleStartDate = e => {
         setStartDate(new Date(e.target.value).getTime());
@@ -20,9 +22,6 @@ export const DateField = ({ isValid, setIsValid }) => {
     const handleEndDate = e => {
         setEndDate(new Date(e.target.value).getTime())
     }
-
-    const onDateFocus = e => (e.target.type = "date"); //IOS not support
-    const onDateBlur = e => (e.target.type = "text"); //IOS not support
 
     const parseDate = date => {
         return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
@@ -69,7 +68,7 @@ export const DateField = ({ isValid, setIsValid }) => {
             <div>
                 <input
                     className={!textError ? styles.date_error : styles.date}
-                    type={isSafari ? 'text' : 'date'}
+                    type={!isSafari ? 'text' : 'date'}
                     placeholder="Дата начала"
                     onChange={handleStartDate}
                     onFocus={isSafari ? onDateFocus : null}
@@ -77,11 +76,11 @@ export const DateField = ({ isValid, setIsValid }) => {
                 />
                 <input
                     className={!textError ? styles.date_error : styles.date}
-                    type={isSafari ? 'text' : 'date'}
+                    type={!isSafari ? 'text' : 'date'}
                     placeholder="Дата конца"
                     onChange={handleEndDate}
-                    onFocus={isSafari ? onDateFocus : null}
-                    onBlur={isSafari ? onDateBlur : null}
+                    onFocus={!isSafari ? onDateFocus : null}
+                    onBlur={!isSafari ? onDateBlur : null}
                 />
             </div>
             <p className={styles.text_error}>
