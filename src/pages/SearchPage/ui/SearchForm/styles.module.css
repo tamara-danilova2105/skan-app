@@ -200,9 +200,9 @@
 
 @media all and (max-width: 500px) {
     .form {
-        width: 375px;
+        width: 100%;
         height: 730px;
-        padding: 32px 14px;
+        padding: 32px 16px;
     }
 
     .items {
@@ -221,7 +221,7 @@
 
     .button,
     .button_disabled {
-        width: 330px;
+        width: 100%;
         margin-top: 40px;
     }
 }

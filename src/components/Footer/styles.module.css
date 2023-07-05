@@ -26,3 +26,13 @@
     line-height: 15px;
     margin-top: 21px;
 }
+
+@media all and (max-width: 500px) {
+    .img {
+        margin-left: 14px;
+    }
+
+    .contact {
+        margin: 25px 19px;
+    }
+}
