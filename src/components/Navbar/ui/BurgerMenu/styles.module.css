@@ -156,4 +156,11 @@
     background: #7CE3E1;
     border: none;
     padding: 16px 117px 12px 117px;
+    color: #000;
+    font-size: 20px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.2px;
 }
