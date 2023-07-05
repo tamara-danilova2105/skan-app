@@ -4,9 +4,20 @@ import folders from '../../../assets/Folders.png'
 import searchimg from '../../../assets/searchPage.png';
 import { SearchForm } from '../ui/SearchForm';
 import { useLoader } from '../../../hooks/useLoader';
+import { useSelector } from 'react-redux';
+import { getAuthStatus } from '../../AuthPage/services/slice';
+import { useNavigate } from 'react-router';
+import { useEffect } from 'react';
 
 export const SearchPage = () => {
+
     const [changeOpen, showLoader] = useLoader();
+    const authStatus = useSelector(getAuthStatus);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        !authStatus && navigate('/')
+    }, [authStatus, navigate])
 
     return (
         <section className={styles.main}>

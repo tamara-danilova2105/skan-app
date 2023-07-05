@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import { getAuthStatus } from '../../../../pages/AuthPage/services/slice';
-import apply from '../../../../assets/apply.png';
+import { getAuthStatus } from '../../../../../AuthPage/services/slice';
+import apply from '../../../../../../assets/apply.png';
 import './styles.css';
 
 export const RateItem = ({ rate }) => {

@@ -1,6 +1,8 @@
+import styles from './styles.module.css';
+
 export const DocumetList = () => {
     return (
-        <div>
+        <div className={styles.main}>
 
         </div>
     );

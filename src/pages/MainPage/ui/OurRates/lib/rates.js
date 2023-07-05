@@ -1,6 +1,6 @@
-import beginner from '../../../assets/beginner.png';
-import pro from '../../../assets/pro.png';
-import business from '../../../assets/business.png';
+import beginner from '../../../../../assets/beginner.png';
+import pro from '../../../../../assets/pro.png';
+import business from '../../../../../assets/business.png';
 
 export const rates = [
     {

@@ -68,7 +68,7 @@ export const SearchForm = ({ changeOpen }) => {
         const searchResult = await respons.json();
         changeOpen();
         navigate('/result');
-        dispatch(saveResult(searchResult));
+        dispatch(saveResult(searchResult.data));
     };
 
     return (

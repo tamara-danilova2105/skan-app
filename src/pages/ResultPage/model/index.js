@@ -1,12 +1,19 @@
 import { useSelector } from "react-redux";
-import { getDataResult } from "../../SearchPage/services/slice";
 import resultIcon from '../../../assets/result_icon.png'
 import styles from './styles.module.css';
+import { getAuthStatus } from "../../AuthPage/services/slice";
+import { useNavigate } from "react-router";
+import { useEffect } from "react";
+import { InformationResult } from "../ui/InformationResult";
 
 export const ResultPage = () => {
 
-    const dataResult = useSelector(getDataResult);
-    console.log(dataResult);
+    const authStatus = useSelector(getAuthStatus);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        !authStatus && navigate('/')
+    }, [authStatus, navigate])
 
     return (
         <section className={styles.main}>
@@ -21,6 +28,7 @@ export const ResultPage = () => {
                 </div>
                 <img className={styles.img} src={resultIcon} alt="result icon" />
             </div>
+            <InformationResult />
         </section>
     );
 };

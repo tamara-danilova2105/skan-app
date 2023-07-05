@@ -1,6 +1,6 @@
-import timeIcon from '../../../../assets/time.png';
-import searchIcon from '../../../../assets/search.png';
-import protectionIcon from '../../../../assets/protection.png';
+import timeIcon from '../../../../../../assets/time.png';
+import searchIcon from '../../../../../../assets/search.png';
+import protectionIcon from '../../../../../../assets/protection.png';
 
 export const data = [
     [
