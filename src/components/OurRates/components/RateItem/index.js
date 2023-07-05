@@ -20,7 +20,7 @@ export const RateItem = ({ rate }) => {
     const authStatus = useSelector(getAuthStatus);
 
     return (
-        <div className='main'>
+        <div className={(current && authStatus) ? `main ${style}_main` : 'main'}>
             <div className={`${style}`}>
                 <div>
                     <p className='header'>{header}</p>
