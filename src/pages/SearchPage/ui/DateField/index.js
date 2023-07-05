@@ -11,7 +11,9 @@ export const DateField = ({ isValid, setIsValid }) => {
     const [endDate, setEndDate] = useState();
     const [textError, setTextError] = useState(true);
 
-    let isSafari = window.safari !== undefined;
+    let uagent = navigator.userAgent.toLowerCase();
+    let isSafari = uagent.search("iphone") > -1;
+
     const onDateFocus = e => (e.target.type = "date");
     const onDateBlur = e => (e.target.type = "text"); 
 
