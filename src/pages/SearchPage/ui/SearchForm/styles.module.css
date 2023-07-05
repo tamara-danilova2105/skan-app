@@ -57,6 +57,8 @@
     line-height: normal;
     letter-spacing: 0.42px;
     margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
     appearance: none;
     background: url(../../../../assets/arrow_custom.png) no-repeat right;
     background-position-x: calc(100% - 8px);
