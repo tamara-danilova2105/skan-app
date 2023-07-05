@@ -10,8 +10,9 @@ export const DateField = ({ isValid, setIsValid }) => {
     const [startDate, setStartDate] = useState();
     const [endDate, setEndDate] = useState();
     const [textError, setTextError] = useState(true);
-    const [typeStartField, setStartTypeField] = useState('text');
-    const [typeEndField, setEndTypeField] = useState('text');
+
+    let isSafari = window.safari !== undefined;
+    console.log(isSafari);
 
     const handleStartDate = e => {
         setStartDate(new Date(e.target.value).getTime());
@@ -19,6 +20,13 @@ export const DateField = ({ isValid, setIsValid }) => {
 
     const handleEndDate = e => {
         setEndDate(new Date(e.target.value).getTime())
+    }
+
+    const onDateFocus = e => (e.target.type = "date")
+
+    const onDateBlur = e => {
+        if (!isSafari) e.target.type = "text"
+        else e.target.type = "date"
     }
 
     // const onDateFocus = e => (e.target.type = "date"); //IOS not support
@@ -69,19 +77,19 @@ export const DateField = ({ isValid, setIsValid }) => {
             <div>
                 <input
                     className={!textError ? styles.date_error : styles.date}
-                    type={typeStartField}
+                    type={!isSafari ? 'text' : 'date'}
                     placeholder="Дата начала"
                     onChange={handleStartDate}
-                    onFocus={() => setStartTypeField('date')}
-                    onBlur={() => setStartTypeField('text')}
+                    onFocus={onDateFocus}
+                    onBlur={onDateBlur}
                 />
                 <input
                     className={!textError ? styles.date_error : styles.date}
-                    type={typeEndField}
+                    type={!isSafari ? 'text' : 'date'}
                     placeholder="Дата конца"
                     onChange={handleEndDate}
-                    onFocus={() => setEndTypeField('date')}
-                    onBlur={() => setEndTypeField('text')}
+                    onFocus={onDateFocus}
+                    onBlur={onDateBlur}
                 />
             </div>
             <p className={styles.text_error}>
