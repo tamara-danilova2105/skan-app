@@ -67,7 +67,7 @@ export const DateField = ({ isValid, setIsValid }) => {
             <div>
                 <input
                     className={!textError ? styles.date_error : styles.date}
-                    type='text'
+                    type='data'
                     placeholder="Дата начала"
                     onChange={handleStartDate}
                     onFocus={onDateFocus}
@@ -75,7 +75,7 @@ export const DateField = ({ isValid, setIsValid }) => {
                 />
                 <input
                     className={!textError ? styles.date_error : styles.date}
-                    type='text'
+                    type='data'
                     placeholder="Дата конца"
                     onChange={handleEndDate}
                     onFocus={onDateFocus}
