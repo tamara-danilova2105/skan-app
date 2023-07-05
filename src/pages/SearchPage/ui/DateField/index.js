@@ -71,8 +71,8 @@ export const DateField = ({ isValid, setIsValid }) => {
                     type={!isSafari ? 'text' : 'date'}
                     placeholder="Дата начала"
                     onChange={handleStartDate}
-                    onFocus={isSafari ? onDateFocus : null}
-                    onBlur={isSafari ? onDateBlur : null}
+                    onFocus={!isSafari ? onDateFocus : null}
+                    onBlur={!isSafari ? onDateBlur : null}
                 />
                 <input
                     className={!textError ? styles.date_error : styles.date}
