@@ -196,6 +196,11 @@
     letter-spacing: 0.2px;
 }
 
+.apply {
+    width: 20px;
+    height: 20px;
+}
+
 @media all and (max-width: 500px) {
     .main {
         width: 335px;

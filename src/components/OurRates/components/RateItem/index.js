@@ -46,7 +46,7 @@ export const RateItem = ({ rate }) => {
                 {
                     include.map((item, index) => {
                         return <div key={index} className='include_list'>
-                            <img src={apply} alt='apply' />
+                            <img className='apply' src={apply} alt='apply' />
                             <p className='item'>{item}</p>
                         </div>
                     })

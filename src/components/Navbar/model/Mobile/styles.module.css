@@ -21,3 +21,10 @@
 .logo_white {
     background-color: #029491;
 }
+
+@media all and (max-width: 500px) {
+    .img {
+        margin-right: 14px;
+        margin-left: 14px;
+    }
+}
