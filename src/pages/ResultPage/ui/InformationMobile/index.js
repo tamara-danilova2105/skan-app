@@ -13,9 +13,7 @@ export const InformationMobile = () => {
     const previos = () => {
         setIndex((index => {
             index--
-            if (index < 0) {
-                return dataGistograms.length - 1
-            }
+            if (index < 0) return dataGistograms.length - 1
             return index
         }))
     };
@@ -23,9 +21,7 @@ export const InformationMobile = () => {
     const next = () => {
         setIndex((index => {
             index++
-            if (index > dataGistograms.length - 1) {
-                index = 0
-            }
+            if (index > dataGistograms.length - 1) index = 0
             return index
         }))
     }

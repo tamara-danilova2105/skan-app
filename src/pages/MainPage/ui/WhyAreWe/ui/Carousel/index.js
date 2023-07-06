@@ -38,9 +38,7 @@ export const Carousel = () => {
     const previos = () => {
         setIndex((index => {
             index--
-            if (index < 0) {
-                return dataCarousel.length - 1
-            }
+            if (index < 0) return dataCarousel.length - 1
             return index
         }))
     }
@@ -48,9 +46,7 @@ export const Carousel = () => {
     const next = () => {
         setIndex((index => {
             index++
-            if (index > dataCarousel.length - 1) {
-                index = 0
-            }
+            if (index > dataCarousel.length - 1) index = 0
             return index
         }))
     }
