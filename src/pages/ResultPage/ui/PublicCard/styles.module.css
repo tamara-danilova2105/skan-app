@@ -37,6 +37,7 @@
 .type {
     display: flex;
     height: 22px;
+    margin-top: 18px;
 }
 
 .par {
@@ -94,6 +95,7 @@
 .more {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     margin-top: 46px;
 }
 
@@ -109,6 +111,7 @@
     line-height: normal;
     letter-spacing: 0.32px;
     padding: 14px 30px;
+    color: #000;
 }
 
 .word {
@@ -126,5 +129,29 @@
         width: 100%;
         margin-bottom: 20px;
         padding: 19px 14px;
+    }
+
+    .date,
+    .name {
+        font-size: 14px;
+        letter-spacing: 0.14px;
+    }
+
+    .header {
+        font-size: 19px;
+        letter-spacing: 0.19px;
+        margin-top: 20px;
+        height: max-content;
+    }
+
+    .text {
+        font-size: 12px;
+        letter-spacing: 0.12px;
+    }
+    
+    .btn_reed {
+        border-radius: 5px;
+        font-size: 14px;
+        letter-spacing: 0.14px;
     }
 }

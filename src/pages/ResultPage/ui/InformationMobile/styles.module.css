@@ -1,0 +1,58 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 34px;
+}
+
+.button {
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
+}
+
+.field_description {
+    display: flex;
+    border-radius: 10px 10px 0px 0px;
+    background: #029491;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.16px;
+}
+
+.field1 {
+    padding: 23px 20px 23px 24px;
+}
+
+.field2 {
+    padding: 23px 10px 23px 35px;
+}
+
+.field3 {
+    padding: 23px 14px 23px 23px;
+}
+
+.container_items {
+    display: flex;
+}
+
+.item1 {
+    padding: 23px 10px 23px 14px;
+}
+
+.item2 {
+    padding: 23px 10px 23px 50px;
+}
+
+.item3 {
+    padding: 23px 14px 23px 50px;
+}

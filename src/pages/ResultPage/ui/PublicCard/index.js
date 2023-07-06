@@ -62,7 +62,11 @@ export const PublicCard = ({ item }) => {
                     </div>
 
                     <h2 className={styles.header}>
-                        {document.title.text}
+                        {
+                            document.title.text.length > 100
+                                ? document.title.text.substring(0, 100) + " ..."
+                                : document.title.text
+                        }
                     </h2>
 
                     <div
