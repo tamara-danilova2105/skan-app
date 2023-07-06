@@ -6,11 +6,15 @@ import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import { InformationResult } from "../ui/InformationResult";
 import { DocumetList } from "../ui/DocumetList";
+import { InformationMobile } from "../ui/InformationMobile";
 
 export const ResultPage = () => {
 
     const authStatus = useSelector(getAuthStatus);
     const navigate = useNavigate();
+
+    const width = window.innerWidth;
+    const breakpoint = 620;
 
     useEffect(() => {
         !authStatus && navigate('/')
@@ -29,8 +33,15 @@ export const ResultPage = () => {
                 </div>
                 <img className={styles.img} src={resultIcon} alt="result icon" />
             </div>
-            <InformationResult />
+
+            {
+                width > breakpoint
+                    ? <InformationResult />
+                    : <InformationMobile />
+            }
+            
             <DocumetList />
         </section>
     );
 };
+
