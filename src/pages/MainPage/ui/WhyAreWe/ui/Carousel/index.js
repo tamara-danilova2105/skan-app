@@ -7,7 +7,8 @@ import styles from './styles.module.css';
 export const Carousel = () => {
 
     const [index, setIndex] = useState(0);
-    const [dataCarousel, setDataCarousel] = useState([])
+    const [dataCarousel, setDataCarousel] = useState([]);
+
     const width = window.innerWidth;
     const breakpoint = 620;
 
@@ -56,13 +57,16 @@ export const Carousel = () => {
 
     return (
         <div className={styles.main}>
+
             <button
                 onClick={previos}
                 className={styles.button}
             >
                 {BackIcon()}
             </button>
+
             {getCarousel()}
+            
             <button
                 onClick={next}
                 className={styles.button}

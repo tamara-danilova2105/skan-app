@@ -9,7 +9,6 @@ export const PublicCard = ({ item }) => {
 
     const token = useSelector(getToken);
     const [document, setDocument] = useState(null);
-    console.log(document);
 
     useEffect(() => {
         const getPublic = async () => {

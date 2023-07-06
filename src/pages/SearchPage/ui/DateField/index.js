@@ -18,13 +18,12 @@ export const DateField = ({ isValid, setIsValid }) => {
     const onDateBlur = e => (e.target.type = "text"); 
 
     const handleStartDate = e => setStartDate(new Date(e.target.value).getTime());
-
-    const handleEndDate = e => setEndDate(new Date(e.target.value).getTime())
+    const handleEndDate = e => setEndDate(new Date(e.target.value).getTime());
 
 
     const parseDate = date => {
         return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
-    }
+    };
 
     useEffect(() => {
         if (isNaN(startDate)) {

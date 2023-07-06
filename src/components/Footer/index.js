@@ -7,9 +7,10 @@ export const Footer = () => {
             <img className={styles.img} src={logo} alt='logo' />
             <div className={styles.contact}>
                 <div>
-                    <p className={styles.text}>г. Москва, Цветной б-р, 40</p>
-                    <p className={styles.text}>+7 495 771 21 11</p>
-                    <p className={styles.text}>info@skan.ru</p>
+                    {
+                        ['г. Москва, Цветной б-р, 40', '+7 495 771 21 11', 'info@skan.ru']
+                            .map((p, index) => <p key={index} className={styles.text}>{p}</p>)
+                    }
                 </div>
                 <div>
                     <p className={styles.copyright}>Copyright. 2022</p>

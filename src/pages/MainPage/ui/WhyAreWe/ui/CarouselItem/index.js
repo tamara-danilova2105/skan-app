@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
 
-export const CarouselItem = ({icon, text}) => {
+export const CarouselItem = ({ icon, text }) => {
     return (
         <div className={styles.main}>
             <img src={icon} alt='item' />

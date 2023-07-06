@@ -16,7 +16,7 @@ export const NavbarMobile = () => {
         <nav className={isOpen ? styles.navbar : styles.navbar_active}>
             <div className={isOpen ? styles.logo : styles.logo_white}>
                 <img className={styles.img} src={isOpen ? logo : logoWhite} alt='logo' />
-                {(authStatus && isOpen) && <AccountInfo />}
+                { (authStatus && isOpen) && <AccountInfo /> }
             </div>
             <BurgerMenu
                 isOpen={isOpen}

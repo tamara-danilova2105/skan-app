@@ -8,7 +8,6 @@ import { cases, parseDate } from '../../../../helpers';
 export const InformationMobile = () => {
 
     const dataGistograms = useSelector(getDataGistorams);
-    console.log(dataGistograms);
     const [index, setIndex] = useState(0);
 
     const previos = () => {
