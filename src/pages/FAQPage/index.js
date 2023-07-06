@@ -1,6 +1,6 @@
 export const FAQPage = () => {
     return (
-        <div>
+        <div className="page">
             FAQ
         </div>
     );

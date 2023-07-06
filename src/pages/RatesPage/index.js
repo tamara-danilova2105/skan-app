@@ -1,6 +1,6 @@
 export const RatesPage = () => {
     return (
-        <div>
+        <div className="page">
             ТАРИФЫ
         </div>
     );

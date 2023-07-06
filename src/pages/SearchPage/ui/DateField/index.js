@@ -17,13 +17,10 @@ export const DateField = ({ isValid, setIsValid }) => {
     const onDateFocus = e => (e.target.type = "date");
     const onDateBlur = e => (e.target.type = "text"); 
 
-    const handleStartDate = e => {
-        setStartDate(new Date(e.target.value).getTime());
-    }
+    const handleStartDate = e => setStartDate(new Date(e.target.value).getTime());
 
-    const handleEndDate = e => {
-        setEndDate(new Date(e.target.value).getTime())
-    }
+    const handleEndDate = e => setEndDate(new Date(e.target.value).getTime())
+
 
     const parseDate = date => {
         return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`

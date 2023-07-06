@@ -10,3 +10,30 @@
     line-height: normal;
     letter-spacing: 0.6px;
 }
+
+.container_publics {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 58px;
+}
+
+.container_btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 38px;
+}
+
+.button {
+    border-radius: 5px;
+    background: #5970FF;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.88px;
+    padding: 16px 50px;
+    border: none;
+}
