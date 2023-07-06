@@ -120,3 +120,11 @@
     line-height: normal;
     letter-spacing: 0.32px;
 }
+
+@media all and (max-width: 500px) {
+    .main {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 19px 14px;
+    }
+}

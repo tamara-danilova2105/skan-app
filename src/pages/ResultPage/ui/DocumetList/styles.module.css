@@ -14,7 +14,6 @@
 .container_publics {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     margin-top: 58px;
 }
 
@@ -36,4 +35,10 @@
     letter-spacing: 0.88px;
     padding: 16px 50px;
     border: none;
+}
+
+@media all and (max-width: 500px) {
+    .container_publics {
+        flex-direction: column;
+    }
 }
