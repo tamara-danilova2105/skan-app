@@ -56,4 +56,8 @@
     .container_publics {
         margin-top: 34px;
     }
+
+    .button {
+        width: 100%;
+    }
 }

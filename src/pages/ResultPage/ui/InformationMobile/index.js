@@ -13,7 +13,7 @@ export const InformationMobile = () => {
     const previos = () => {
         setIndex((index => {
             index--
-            if (index < 0) return dataGistograms.length - 1
+            if (index < 0) return dataGistograms[0]?.data.length - 1
             return index
         }))
     };
@@ -21,7 +21,7 @@ export const InformationMobile = () => {
     const next = () => {
         setIndex((index => {
             index++
-            if (index > dataGistograms.length - 1) index = 0
+            if (index > dataGistograms[0]?.data.length - 1) index = 0
             return index
         }))
     }
@@ -34,13 +34,17 @@ export const InformationMobile = () => {
             <p className={styles.par}>
                 Найдено {dataGistograms[0]?.data.length} {cases(dataGistograms[0]?.data.length, ['вариант', 'варианта', 'вариантов'])}
             </p>
-            <div className={styles.main2}>
-                <button
-                    onClick={previos}
-                    className={styles.button}
-                >
-                    {BackIcon()}
-                </button>
+            <div className={dataGistograms[0]?.data.length > 1 ? styles.main2 : styles.main3}>
+                {
+                    dataGistograms[0]?.data.length > 1 &&
+                    <button
+                        onClick={previos}
+                        className={styles.button}
+                    >
+                        {BackIcon()}
+                    </button>
+                }
+
                 <div className={styles.container}>
                     <div className={styles.field_description}>
                         <p className={styles.field1}>Период</p>
@@ -49,22 +53,25 @@ export const InformationMobile = () => {
                     </div>
                     <div className={styles.container_items}>
                         <p className={styles.item1}>
-                            {parseDate(new Date(dataGistograms[0]?.data[index].date))}
+                            {parseDate(new Date(dataGistograms[0]?.data[index]?.date))}
                         </p>
                         <p className={styles.item2}>
                             {dataGistograms[0]?.data[index]?.value}
                         </p>
                         <p className={styles.item3}>
-                            {dataGistograms[1]?.data[index].value}
+                            {dataGistograms[1]?.data[index]?.value}
                         </p>
                     </div>
                 </div>
-                <button
-                    onClick={next}
-                    className={styles.button}
-                >
-                    {NextIcon()}
-                </button>
+                {
+                    dataGistograms[0]?.data.length > 1 &&
+                    <button
+                        onClick={next}
+                        className={styles.button}
+                    >
+                        {NextIcon()}
+                    </button>
+                }
             </div>
         </div>
     );
