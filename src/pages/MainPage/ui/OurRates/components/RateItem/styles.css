@@ -178,6 +178,11 @@
     letter-spacing: 0.2px;
 }
 
+.button:hover {
+    background: #19267b;
+    transition: all 2s;
+}
+
 .button_auth {
     border: none;
     cursor: pointer;
@@ -195,6 +200,11 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.2px;
+}
+
+.button_auth:hover {
+    background: #888787;
+    transition: all 2s;
 }
 
 .apply {

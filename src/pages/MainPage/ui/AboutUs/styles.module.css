@@ -46,6 +46,11 @@
     cursor: pointer;
 }
 
+.button:hover {
+    background: #19267b;
+    transition: all 2s;
+}
+
 @media all and (max-width: 500px) {
     .main {
         padding: 20px 14px;

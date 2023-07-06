@@ -7,9 +7,9 @@ import { useState } from 'react';
 export const DocumetList = () => {
 
     const dataPublics = useSelector(getDataPublics);
-    const [next, setNext] = useState(2);
+    const [next, setNext] = useState(10);
 
-    const showMore = () => setNext(next + 2);
+    const showMore = () => setNext(next + 10);
 
     return (
         <div className={styles.main}>

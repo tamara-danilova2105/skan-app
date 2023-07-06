@@ -19,6 +19,10 @@
     margin-left: 150px;
 }
 
+.characters_mobile {
+    display: none;
+}
+
 @media all and (max-width: 500px) {
     .auth_page {
         padding: 31px 14px;
@@ -31,8 +35,13 @@
     }
 
     .characters {
+        display: none;
+    }
+
+    .characters_mobile {
+        display: block;
         margin-left: 14px;
-        width: 335px;
-        height: auto;
+        width: 100%;
+        margin-top: 40px;
     }
 }

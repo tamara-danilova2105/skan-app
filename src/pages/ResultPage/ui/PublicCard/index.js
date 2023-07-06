@@ -4,11 +4,13 @@ import { requests } from '../../../../app/endpoints';
 import { useSelector } from 'react-redux';
 import { getToken } from '../../../AuthPage/services/slice';
 import { cases, parseDate } from '../../../../helpers';
+import { Link } from 'react-router-dom';
 
 export const PublicCard = ({ item }) => {
 
     const token = useSelector(getToken);
     const [document, setDocument] = useState(null);
+    console.log(document);
 
     useEffect(() => {
         const getPublic = async () => {
@@ -61,11 +63,17 @@ export const PublicCard = ({ item }) => {
                     </div>
 
                     <h2 className={styles.header}>
-                        {
-                            document.title.text.length > 100
-                                ? document.title.text.substring(0, 100) + " ..."
-                                : document.title.text
-                        }
+                        <Link
+                            className={styles.link}
+                            to={document.url}
+                            target='_blank'
+                        >
+                            {
+                                document.title.text.length > 100
+                                    ? document.title.text.substring(0, 100) + " ..."
+                                    : document.title.text
+                            }
+                        </Link>
                     </h2>
 
                     <div
@@ -75,7 +83,13 @@ export const PublicCard = ({ item }) => {
 
                     <div className={styles.more}>
                         <button className={styles.btn_reed}>
-                            Читать в источнике
+                            <Link
+                                className={styles.link}
+                                to={document.url}
+                                target='_blank'
+                            >
+                                Читать в источнике
+                            </Link>
                         </button>
                         <p className={styles.word}>
                             {document.attributes.wordCount} {cases(document.attributes.wordCount, ['слово', 'слова', 'слов'])}

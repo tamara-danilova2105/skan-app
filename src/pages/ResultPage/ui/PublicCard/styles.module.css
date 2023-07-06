@@ -61,7 +61,7 @@
     line-height: normal;
     letter-spacing: 0.52px;
     margin-top: 24px;
-    height: 65px;
+    height: 75px;
 }
 
 .text {
@@ -111,7 +111,16 @@
     line-height: normal;
     letter-spacing: 0.32px;
     padding: 14px 30px;
+}
+
+.btn_reed:hover {
+    background: #47a09e;
+    transition: all 2s;
+}
+
+.link {
     color: #000;
+    text-decoration: none;
 }
 
 .word {

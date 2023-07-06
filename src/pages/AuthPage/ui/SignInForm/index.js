@@ -2,6 +2,7 @@ import styles from './styles.module.css';
 import yandex from '../../../../assets/yandex.png';
 import google from '../../../../assets/google.png'
 import facebook from '../../../../assets/facebook.png'
+import form from '../../../../assets/form.png';
 import { useForm } from 'react-hook-form';
 import { requests } from '../../../../app/endpoints';
 import { useState } from 'react';
@@ -54,6 +55,7 @@ export const SignInForm = ({ changeOpen }) => {
             className={styles.form}
             onSubmit={handleSubmit(handleSignIn)}
         >
+            <img src={form} alt='close' className={styles.close} />
             <div className={styles.container_btn}>
                 <div className={styles.signin}>Войти</div>
                 <div className={styles.signup}>Зарегистрироваться</div>

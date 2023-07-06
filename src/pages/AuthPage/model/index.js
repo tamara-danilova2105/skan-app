@@ -17,6 +17,7 @@ export const AuthPage = () => {
                 <img className={styles.characters} src={images} alt='Characters'/>
             </div>
             <SignInForm changeOpen={changeOpen} />
+            <img className={styles.characters_mobile} src={images} alt='Characters'/>
         </section>
     );
 };
